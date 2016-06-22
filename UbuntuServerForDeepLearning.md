@@ -263,3 +263,39 @@ Problems
   + Access Ubuntu Server via SSH from Windows machines [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html]
     - PuTTy = ssh //make ssh connection
     - PSCP = scp //transfer files via ssh connection
+  + Change Repository [https://help.ubuntu.com/community/Repositories/CommandLine]
+    $ sudo add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ saucy universe multiverse"
+    $ sudo add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ saucy-updates universe multiverse"
+    or change file /etc/apt/sources.list
+  + 
+  
+III. CUDA Toolkit SDK 8.0RC [http://developer.download.nvidia.com/compute/cuda/8.0/secure/rc1/docs/sidebar/CUDA_Installation_Guide_Linux.pdf?autho=1466451861_bef16194c32066cd5b60b00e704e8460&file=CUDA_Installation_Guide_Linux.pdf]
+  $ sudo dpkg -i cuda-repo-<distro>_<version>_<architecture>.deb
+  $ sudo apt-get update
+  $ sudo apt-get install cuda
+  Post-installation
+  The PATH variable needs to include /usr/local/cuda-8.0/bin To add this path to the PATH variable:
+  $ export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
+  In addition, when using the runfile installation method, the LD_LIBRARY_PATH variableneeds to contain /usr/local/cuda-8.0/lib64 on a 64-bit system, or /usr/local/cuda-8.0/lib on a 32-bit system. To change the environment variables for 64-bit operating systems:
+  $ export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+  To change the environment variables for 32-bit operating systems:
+  $ export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+  Note that the above paths change when using a custom install path with the runfile installation method.
+
+  $ cat /proc/driver/nvidia/version
+  
+  $ cp /usr/local/cuda/bin/cuda-install-samples-8.0.sh ~
+  Goto cuda samples directory and compile projects
+  $ make
+  $ make test
+  
+  Install the source code for cuda-gdb
+  
+IV.  cuDNN v5 for 8.0RC
+  Download .tar file
+  Extract files 
+  Copy files into cuda directory in /usr/local/cuda-8.0/include and /usr/local/cuda-8.0/lib64
+  
+V.   Theano framework
+  $ sudo apt-get install python-numpy python-scipy python-dev python-pip python-nose g++ libopenblas-dev git
+  $ sudo pip install Theano
