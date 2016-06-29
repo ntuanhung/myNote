@@ -43,6 +43,7 @@
 #### Offline data from online patterns
 + Draw Bitmap (stroke's width problem)
 + Blurring
+
 #### Generating artificial patterns (both)
 + Online: resampling, sigma-lognormal method, affine transform
 + Offline: transformations
