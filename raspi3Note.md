@@ -10,3 +10,5 @@ Change external_url to http://example.com/gitlab/
 
 ## Install OwnCloud
 [http://blog.dical.org/2016/04/owncloud-9-0-1-on-raspberry-pi-3-step-by-step/]
+
+[http://www.techjawab.com/2015/09/install-owncloud-8-with-nginx-and-mysql.html]
